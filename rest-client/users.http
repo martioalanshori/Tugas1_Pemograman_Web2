@@ -1,0 +1,96 @@
+### User CRUD Operations Testing
+
+### GET all users
+GET http://localhost:3000/api/users
+
+### GET user by ID (assuming user with ID 1 exists)
+GET http://localhost:3000/api/users/1
+
+### POST Create new user
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "nama": "Andi Wijaya",
+    "nim": "789012",
+    "password": "123456"
+}
+
+### GET all users (after creating new user)
+GET http://localhost:3000/api/users
+
+### PUT Update user (assuming user with ID 1 exists)
+PUT http://localhost:3000/api/users/1
+Content-Type: application/json
+
+{
+    "nama": "Andi Wijaya Updated",
+    "password": "654321"
+}
+
+### GET user by ID (after update)
+GET http://localhost:3000/api/users/1
+
+### POST Create another user
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "nama": "Siti Nurhaliza",
+    "nim": "345678",
+    "password": "password123"
+}
+
+### GET all users (after creating second user)
+GET http://localhost:3000/api/users
+
+### Try to create user with duplicate NIM
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "nama": "Duplicate User",
+    "nim": "789012",
+    "password": "password123"
+}
+
+### PUT Update user with partial data (only nama)
+PUT http://localhost:3000/api/users/1
+Content-Type: application/json
+
+{
+    "nama": "Andi Wijaya Updated Again"
+}
+
+### GET user by ID (after partial update)
+GET http://localhost:3000/api/users/1
+
+### DELETE user
+DELETE http://localhost:3000/api/users/1
+
+### GET all users (after deletion)
+GET http://localhost:3000/api/users
+
+### Try to get deleted user
+GET http://localhost:3000/api/users/1
+
+### Try to update non-existent user
+PUT http://localhost:3000/api/users/999
+Content-Type: application/json
+
+{
+    "nama": "Non-existent User"
+}
+
+### Try to delete non-existent user
+DELETE http://localhost:3000/api/users/999
+
+### Create user with invalid data
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "nama": "",
+    "nim": "invalid",
+    "password": "123"
+}

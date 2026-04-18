@@ -1,0 +1,58 @@
+### Student Authentication API Testing
+
+### POST Register a new user
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "nama": "Budi Santoso",
+    "nim": "123456",
+    "password": "123456"
+}
+
+### POST Login with user
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "nim": "123456",
+    "password": "123456"
+}
+
+### Try to register with duplicate NIM
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "nama": "Duplicate User",
+    "nim": "123456",
+    "password": "password123"
+}
+
+### Try to login with wrong password
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "nim": "123456",
+    "password": "wrongpassword"
+}
+
+### Try to login with non-existent NIM
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "nim": "999999",
+    "password": "123456"
+}
+
+### Register with invalid data
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "nama": "",
+    "nim": "",
+    "password": "123"
+}
