@@ -2,9 +2,9 @@
 
 > **Tugas Pemrograman Web 2** — REST API untuk autentikasi dan manajemen data mahasiswa menggunakan Express.js dan SQLite.
 
-**Nama : Muhammad Martio Al Anshori**
-**NIM : 23552011350**
-**Kelas : TIF 23 PK**
+Nama : Muhammad Martio Al Anshori
+NIM : 23552011350
+Kelas : TIF 23 PK
 
 ---
 
